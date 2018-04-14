@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+    <!-- HANDLEBARS TEMPLATE HERE -->
+    <script id="author-stats-template" type="text/x-handlebars-template">
+        <li><b>{{author}}:</b> {{author-stats}} words written</li>
+    </script>
+    <!-- HANDLEBARS TEMPLATE HERE -->
   </head>
   <body>
     <header class="site-header clearfix">
@@ -36,14 +41,7 @@
         <h2>Author Stats</h2>
         <p><em>Details on who is writing, and how much writing they are doing...</em></p>
         <ul class="author-stats">
-          <!-- HANDLEBARS TEMPLATE HERE -->
-          <script id="author-stats-template" type="text/x-handlebars-template">
-            <article class="template" data-category='{{author-stats}}' data-author='{{author}}'>
-              <li>{{author}}: {{author-stats}} words written</li>
-              </article>
-            </section>
-          </script>
-                <!-- HANDLEBARS TEMPLATE HERE -->
+
         </ul>
       </section>
     </main>
@@ -56,7 +54,7 @@
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
     <script>
-      Article.fetchAll();
+      app.Article.fetchAll(articleView.initAdminPage);
     </script>
   </body>
 </html>
