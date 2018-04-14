@@ -54,9 +54,13 @@ var app = app || {};
 
   Article.numWordsByAuthor = () => {
     return Article.allAuthors().map(author => {
+      // console.log('words by author:', Article.all
+      //   .filter(article => article.author === author)
+      //   .map(article => article.body.split(' ').length)
+      //   .reduce((acc, numWordsCurrArt) => acc + numWordsCurrArt));
       return {
         author,
-        totalWords : Article.all
+        totalWordsforAuthor : Article.all
           .filter(article => article.author === author)
           .map(article => article.body.split(' ').length)
           .reduce((acc, numWordsCurrArt) => acc + numWordsCurrArt)
